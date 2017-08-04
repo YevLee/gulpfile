@@ -11,6 +11,16 @@
 
 需要在html文件里面添加代码见gulp 注释
 
+	<!-- build:<type>(alternate search path) <path> <parameters> -->
+	... HTML Markup, list of script / link tags.
+	<!-- endbuild -->
+	 
+	如     
+	<!-- build:css css/combined.css -->
+	<link href="css/one.css" rel="stylesheet">
+	<link href="css/two.css" rel="stylesheet">
+	 <!-- endbuild -->
+
 ## gulp CSS
 合并CSS文件
 
