@@ -1,5 +1,38 @@
 # gulp 常用功能整理
 
+## 相关包安装
+建议使用cnpm
+
+	npm install --save-dev *****
+
+其中 \*\*\*\*\* 部分表示所需要的包模块，如 gulpfile 中的 require('gulp-useref') 需要之前进行包安装如下：
+
+	npm install --save-dev gulp-useref
+	
+## 源文件结构
+下面是 gulpfile 中默认的源文件结构
+
+	—— app
+	  —— css	// 储存css文件
+	     —— **
+	       —— * .css
+	     —— * .css
+	  —— images	// 储存图片
+	    —— * .png
+	    —— * .jpg
+	    —— * .gif
+	 —— script	// 储存js文件
+	      —— **
+	       —— * .js
+	     —— * .js
+	 —— sprite	// 储存要合成雪碧图的文件
+	    —— * .png
+	    —— * .jpg
+	    —— * .gif
+	 —— **
+	   —— *.html
+	 —— *.html
+	 	
 ## 命令行命令
 
 ### gulp clean 
@@ -43,26 +76,3 @@
 ### gulp (default)
 压缩并合并源文件 并 输出到 dist 文件夹
 
-## 源文件结构
-下面是 gulpfile 中默认的源文件结构
-
-	—— app
-	  —— css	// 储存css文件
-	     —— **
-	       —— * .css
-	     —— * .css
-	  —— images	// 储存图片
-	    —— * .png
-	    —— * .jpg
-	    —— * .gif
-	 —— script	// 储存js文件
-	      —— **
-	       —— * .js
-	     —— * .js
-	 —— sprite	// 储存要合成雪碧图的文件
-	    —— * .png
-	    —— * .jpg
-	    —— * .gif
-	 —— **
-	   —— *.html
-	 —— *.html
