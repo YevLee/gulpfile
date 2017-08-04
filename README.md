@@ -63,5 +63,6 @@
 	    —— * .png
 	    —— * .jpg
 	    —— * .gif
-	 —— index.html
+	 —— **
+	   —— *.html
 	 —— *.html
