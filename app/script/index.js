@@ -1,0 +1,5 @@
+var showIndex = {
+	showData : function(){
+		
+	}
+}
