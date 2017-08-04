@@ -40,6 +40,9 @@
 ### gulp imgMin
 图片压缩
 
+### gulp (default)
+压缩并合并源文件 并 输出到 dist 文件夹
+
 ## 源文件结构
 
 	—— app
