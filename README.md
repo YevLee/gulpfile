@@ -42,21 +42,21 @@
 
 ## 源文件结构
 
-—— app
-  —— css	// 储存css文件
-     —— **
-       —— * .css
-     —— * .css
-  —— images	// 储存图片
-    —— * .png
-    —— * .jpg
-    —— * .gif
- —— script	// 储存js文件
-      —— **
-       —— * .js
-     —— * .js
- —— sprite	// 储存要合成雪碧图的文件
-    —— * .png
-    —— * .jpg
-    —— * .gif
+	—— app
+	  —— css	// 储存css文件
+	     —— **
+	       —— * .css
+	     —— * .css
+	  —— images	// 储存图片
+	    —— * .png
+	    —— * .jpg
+	    —— * .gif
+	 —— script	// 储存js文件
+	      —— **
+	       —— * .js
+	     —— * .js
+	 —— sprite	// 储存要合成雪碧图的文件
+	    —— * .png
+	    —— * .jpg
+	    —— * .gif
 
