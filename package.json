@@ -2,13 +2,15 @@
   "name": "gulpfile",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "gulp": "^3.9.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-css-spriter": "^0.4.0",
     "gulp-htmlmin": "^3.0.0",
@@ -19,6 +21,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-spriter": "^1.1.5",
     "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
     "imagemin-pngcrush": "^5.1.0",
     "jshint": "^2.9.5"
   },

@@ -1,11 +1,14 @@
 var gulp = require('gulp'),
+	useref = require('gulp-useref'), // html 路径替换
 	notify = require('gulp-notify'), // 提示信息
 	htmlmin = require('gulp-htmlmin'),	// html 压缩
 	minifyCSS = require('gulp-minify-css'), // css 压缩
 	concat = require('gulp-concat'), // 文件合并
 	spriter = require('gulp-css-spriter'), // 雪碧图
 
-	// 	imagemin = require('gulp-imagemin'), // 图片压缩
+	clean = require('gulp-clean'),		// 清除原有文件
+	cache = require('gulp-cache'),
+	imagemin = require('gulp-imagemin'), // 图片压缩
 	// pngcrush = require('imagemin-pngcrush'),
 	rename = require('gulp-rename'), // 文件重命名
 	uglify = require('gulp-uglify'), // js 压缩
@@ -15,9 +18,29 @@ var gulp = require('gulp'),
 
 
 // html 相关操作
-	
+	/* 替换路径
+	 *
+	 *  需要在文件里面添加下面的
+	 *	<!-- build:<type>(alternate search path) <path> <parameters> -->
+	 *	... HTML Markup, list of script / link tags.
+	 *	<!-- endbuild -->
+	 *
+	 *  如     
+	 *  <!-- build:css css/combined.css -->
+	 *  	<link href="css/one.css" rel="stylesheet">
+	 *  	<link href="css/two.css" rel="stylesheet">
+	 *  <!-- endbuild -->
+	 *
+	 */
+	gulp.task('clean',function(){
+		return gulp.src('./dist')
+		.pipe(clean())
+		.pipe(notify('清除原有文件'))
+	})
+
 	gulp.task('html',function(){
 		return gulp.src('app/**/*.html')
+		.pipe (useref())
 		.pipe(htmlmin({collapseWhitespace: true}))
 		.pipe(gulp.dest('dist/'))
 	});	
@@ -56,17 +79,23 @@ var gulp = require('gulp'),
 
 	gulp.task('script',function(){
 		return gulp.src('./app/script/**/*.js')
-		// .pipe(jshint())
-		// .pipe(jshint.reporter('YOUR_REPORTER_HERE'))
+		// .pipe(jshint('.jshintrc'))
+		// .pipe(jshint.reporter('default'))
 		.pipe(concat('main.js'))
-		.pipe(notify('js 合并完成'))
 		.pipe(gulp.dest('./dist/script'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/script'))
 		.pipe(notify('js 部分完成'))
-	})
+	});
 
+// 图片品质压缩
+	gulp.task('imgMin',function(){
+		return gulp.src('./app/images/**/*')	
+		.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+		.pipe(gulp.dest('./dist/images/'))
+		.pipe(notify('图片压缩部分完成'))
+	})
 
 // 网页热加载
 	gulp.task('serve',function(){
@@ -82,5 +111,6 @@ var gulp = require('gulp'),
 
 
 
-gulp.task('default',['html','CSS','script'],function(){
+gulp.task('default',['clean'],function(){
+	gulp.start('html','script','CSS','imgMin');
 });

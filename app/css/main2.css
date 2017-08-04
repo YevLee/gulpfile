@@ -1,21 +1,4 @@
-/* css reset */
-html,body,a,p,div,span,ul,h1,h2,h3,h4,span{margin: 0; padding: 0; font-size: 12px; font-family: '微软雅黑'}
-img{border: none;}
-a{text-decoration: none; cursor: pointer;}
-html,body{background: #efefef;}
-li{list-style: none;}
-label{cursor: pointer;}
 
-body{
-  background-color: #d5ebfd;
-  /* @meta {"spritesheet": {"include": false}}  */
-  background-image: url(../images/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: top center;
-}
-header{
-}
 .mainpage{
   width: 1000px;
   margin: 0 auto;
