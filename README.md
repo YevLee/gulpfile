@@ -11,8 +11,10 @@
 	
 源文件默认包如下
 
-	 npm install --save-dev gulp gulp-useref gulp-notify gulp-minify-css gulp-concat gulp-css-spriter gulp-clean gulp-cache gulp-imagemin gulp-rename gulp-uglify gulp-jshint  browser-sync 
+	 npm install --save-dev gulp gulp-useref gulp-notify gulp-minify-css gulp-concat gulp-css-spriter
+	 npm install --save-dev gulp-clean gulp-cache gulp-imagemin gulp-rename gulp-uglify browser-sync 
 	 npm i gulp-htmlmin --save-dev
+	 npm install jshint gulp-jshint --save-dev
 	
 ## 源文件结构
 下面是 gulpfile 中默认的源文件结构
