@@ -9,7 +9,7 @@
 
 	npm install --save-dev gulp-useref
 	
-源文件默认包如下
+源文件需要的包安装命令如下
 
 	 npm install --save-dev gulp gulp-useref gulp-notify gulp-minify-css gulp-concat gulp-css-spriter
 	 npm install --save-dev gulp-clean gulp-cache gulp-imagemin gulp-rename gulp-uglify browser-sync 
